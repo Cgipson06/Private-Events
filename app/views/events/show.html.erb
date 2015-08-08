@@ -1,0 +1,29 @@
+<div class = " col-md-5" >
+<div class = "container" >
+<div class = "event" >
+<h1><%= @event.title %> </h1>
+<h4><%= @event.body %> </h4>
+<p>Event created by <%= @event.creator.name %>
+ </p><% unless @attendees.each.nil? %>
+<p>Attending the event:</p>
+<ul>
+<% @attendees.each do |person| %>
+  <li><%= link_to person.name, User.find(person.id)  %></li>
+<% end %>
+<% end %>
+</ul>
+
+<p>Event id : <%= @event.id %></p>
+<p>Current Users id is : <%= session[:user_id] %></p>
+
+<% if logged_in? %>
+<%= button_to "Attend", {controller: "invites", action: "create", :attendee_id=> session[:user_id], :attended_event_id=> @event.id}, :method=>:post  %>
+<% else %>
+<%= button_to "Sign in to attend this event", signup_path, method: :get, class:"btn btn-primary btn-medium" %>
+<% end %>
+
+
+</div>
+</div>
+</div>
+

@@ -1,0 +1,7 @@
+== Private Events
+
+An event manager site where you create events, invite users to attend, and attend other users events.
+
+A project for theodinproject.com
+
+

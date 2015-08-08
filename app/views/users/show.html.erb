@@ -1,0 +1,19 @@
+
+<h1><%= User.find(params[:id]).name %>'s Page</h1>
+<h2> Upcoming Events </h2>
+<ul class = "list-group">
+<% @upcoming_events.each do |event| %>
+  <li class = "list-group-item"><h4><%= event.title %></h4>
+  <p><%= event.body %></p>
+  <p>hosted by : <%=link_to event.creator.name, User.find(event.creator.id) %>
+  <p> happening on <%= event.date %></p></li>
+<% end %></ul>
+<h2>Past Events</h2>
+<ul>
+<% @past_events.each do |past| %>
+  <li><%= past.title %></li>
+  <%= past.body %>
+  <%= past.date %>
+<% end %></ul>
+  
+  

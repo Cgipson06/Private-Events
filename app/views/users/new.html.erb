@@ -1,0 +1,26 @@
+<div class = "col" >
+<div class = "container" >
+
+
+<h1> Sign up for Private Events </h1>
+<div>
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.submit "Create my account" %>
+  <% end %>  <div class="row text-center">
+  <p>Already a user?</p>
+  <%= link_to "Sign in", login_path, class: "btn btn-md btn-primary" %>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+  

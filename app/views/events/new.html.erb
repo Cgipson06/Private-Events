@@ -1,0 +1,16 @@
+<div>
+<%= form_for(@event) do |f| %>
+
+  
+  <%= f.label "Date" %>
+  <%= f.date_field(:date) %>
+  
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  
+  <%= f.label "Description" %>
+  <%= f.text_area :body %>
+  
+  <%= f.submit "Submit"%>
+<% end %>
+</div>

@@ -1,0 +1,32 @@
+<div class = "col col-md-5" >
+  <div class = "container" >
+  <h1>Future Events</h1>
+
+    <div class = "event" >
+      <ul>
+      <% @upcoming_events.each do |event| %>
+        <li>
+        <%= link_to event.title, Event.find(event.id) %></li>
+          <ul><li><%= event.date %></li>
+              <li><%= event.body %></li>
+              <li><%= link_to "Go to Event Page", event_path(event.id) %></li>
+          </ul>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  <h1>Past Events</h1>
+    <div class= "event" >
+    
+      <ul>
+      <% @past_events.each do |event| %>
+      <li>
+      <%= link_to event.title, Event.find(event.id) %><br>
+        <ul><li><%= event.date %></li>
+            <li><%= event.body %></li>
+        </ul>
+      </li>
+      <% end %>
+    </div>
+  </div>
+</div>
